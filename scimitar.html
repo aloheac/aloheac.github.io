@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Andrew Loheac</title>
+<link rel="stylesheet" href="https://use.typekit.net/fxx2rok.css">
+<style type="text/css">
+body {
+	background-color: #fff2e6;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div.bodydiv {
+	width:850px;
+	background-color:#FFF;	
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+}
+
+div.bodymain {
+	margin-left:20px;
+	margin-right:20px;
+}
+
+div.header {
+	width:850px;
+	height:80px;
+	background-color:#ffb066;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+div.footer {
+	background-color:#ffb066;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:20px;
+	padding-right:20px;
+	font-size:12px;
+	margin-top:20px;
+	border-top:solid #cc6300;
+	border-width:3px;
+}
+
+p.heading {
+	font-size:16px;
+	font-weight:bold;
+	color:#C00;	
+}
+
+p.mainbody {
+	margin-left:10pt;
+}
+
+#menubar {
+	text-align:center;
+	width:100%;
+	padding:0px;
+	height:30px;
+	background-color:#ffb066;
+	border-bottom:solid #cc6300;
+	border-width:3px;
+}
+
+#menubarlinks {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+#menubarlinks a {
+	display:inline-block;
+	width:120px;
+	color:#000;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#menubarlinks a:hover {
+	background-color:#cc6300;
+}
+
+#menubarlinks li {
+	display:inline;
+}
+
+.layout-column {
+	flex: 50%;
+}
+
+.layout-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+p.code {
+	font-family: source-code-pro, monospace;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 11pt;
+	border-style: solid;
+	border-width: thin;
+	padding: 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="bodydiv">
+	<div class="header">
+    	<p style="margin-left:20px;font-size:24px;font-weight:bold;margin-bottom:0px;margin-top:0px">Andrew C. Loheac, Ph.D.</p>
+        <p style="margin-left:30px;margin-top:5px;margin-bottom:0px;font-size:14px">Analytical Consultant, SAS Institute<br/>
+        Computational Physicist, University of North Carolina at Chapel Hill</p>
+  </div>
+  <div id="menubar">
+    <div style="line-height:30px">
+    	<ul id="menubarlinks">
+        	<li><a href="./index.html">Home</a></li>
+            <li><a href="./research.html">Research</a></li>
+            <li><a href="./publications.html">Publications</a></li>
+            <li><a style="background-color:#cc6300" href="./scimitar.html">Scimitar</a></li>
+            <li><a href="./photography.html">Photography</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="bodymain">
+    <p class="heading">Scimitar: A Scripting Tool for Parameter Space Exploration</p>
+    <p>
+		<em>Scimitar</em> is a small software application which provides a robust but simple scripting language to define a highly-dimensional parameter space over which to execute a numerical simulation. This tool automates the process of configuring, organizing, executing, and monitoring a large number of simulation jobs on compute resources. In practice, the Scimitar compiler generates a Python script which will execute an instance of a program for each combination of selected parameters in an organized fashion, which helps to simplify data reduction and post-processing.
+	</p>
+
+	
+	<p>
+		The scripting language used to define the parameter space to be explored and configure available options provides functionality including:
+		<ul>
+			<li>defining floating-point and integer parameters using lists, ranges, and functions,</li>
+			<li>assigning format specifiers to parameters to control conversions from floating-point to strings,</li>
+			<li>support for random-number generation using uniform and normal distributions,</li>
+			<li>support for defining a variety of function objects which utilize loops, conditionals, and arrays,</li>
+			<li>defining parameter groupings which provide finer-grained control over the parameter space.</li>
+		</ul>
+	</p>
+
+
+	<p class="heading">Sample Script</p>
+	The following sample script highlights some of the features available in Scimitar. More details are available in the documentation.
+	<p class="code">
+	    <span style="color:green; font-weight: bold;">// Define a constant integer NTAU with value 200, and a constant<br/>
+		// floating-point parameter beta with value 2.5.<br/></span>
+		<span style="color: blue;">param int</span> NTAU 200;<br/>
+		<span style="color: blue;">param real</span> beta 2.5;<br/><br/>
+
+		<span style="color:green; font-weight: bold;">// Define a calculated parameter dtau, where dtau = beta / NTAU.<br/></span>
+		<span style="color: blue;">param function</span> dtau beta / NTAU;<br/><br/>
+
+		<span style="color:green; font-weight: bold;">// Iterate floating-point parameter mu from -5 to 5 in steps of 0.1.<br/>
+		// This value will be written out using one decimal point, and the<br/>
+		// parameter will appear first in the hierarchical directory structure.<br/></span>
+		<span style="color: blue;">param real</span> mu -5:0.1:5 {<span style="color: purple;">format</span>=%.1f <span style="color: purple;">dir</span>=1};<br/><br/>
+
+		<span style="color:green; font-weight: bold;">// Define parameter U which will iterate over values (0, 0.5, 1.0, 1.5, and 4).<br/></span>
+		<span style="color: blue;">param real</span> U [0.0:0.5:2.0, 4.0] {<span style="color: purple;">dir</span>=2};<br/><br/>
+
+		<span style="color:green; font-weight: bold;">// Choose to only execute runs where mu is between (U / 2) + 3 and (U / 2) - 3.<br/></span>
+		<span style="color: blue;">run</span> {<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">if</span> ( mu < ( U / 2 - 3 ) <span style="color: blue;">or</span> mu > ( U / 2 + 3 ) ) { <span style="color: blue;">remove</span>; }<br/>
+		}
+
+	</p>
+
+	<p class="heading">Download</p>
+	<p>The latest release of Scimitar is available on <a href="https://github.com/aloheac/scimitar">GitHub</a>.</p>
+	<p>Please note this software is in <b>beta</b> and may contain bugs, may have incomplete documentation, or could use improvement. The content of this project is continually evolving. However, it is made available in the hope it will be useful. Feedback is most welcome.</p>
+  </div>
+
+  <div align="center" class="footer">
+    <div style="float:left;width=50%;">
+      <p style="margin-top:0px;margin-bottom:0px;margin-right:0pt;margin-left:0px">&copy; 2021 Andrew Loheac</p>
+    </div>
+    <div style="float:right;width=50%;">
+       <p style="margin-top:0px;margin-bottom:0px;margin-right:0pt;margin-left:0px">This page was last updated on 9 July 2020.</p>
+    </div>
+    &nbsp;
+  </div>
+</div>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27079097-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

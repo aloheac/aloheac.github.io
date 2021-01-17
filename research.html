@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Andrew Loheac - Research</title>
+<style type="text/css">
+body {
+	background-color: #fff2e6;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div.bodydiv {
+	width:850px;
+	background-color:#FFF;	
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+}
+
+div.bodymain {
+	margin-left:20px;
+	margin-right:20px;
+}
+
+div.header {
+	width:850px;
+	height:80px;
+	background-color:#ffb066;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+div.footer {
+	background-color:#ffb066;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:20px;
+	padding-right:20px;
+	font-size:12px;
+	margin-top:20px;
+	border-top:solid #cc6300;
+	border-width:3px;
+}
+
+p.heading {
+	font-size:16px;
+	font-weight:bold;
+	color:#C00;	
+}
+	
+p.subheading {
+	font-weight:bold;
+}
+
+p.mainbody {
+	margin-left:10pt;
+}
+
+#menubar {
+	text-align:center;
+	width:100%;
+	padding:0px;
+	height:30px;
+	background-color:#ffb066;
+	border-bottom:solid #cc6300;
+	border-width:3px;
+}
+
+#menubarlinks {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+#menubarlinks a {
+	display:inline-block;
+	width:120px;
+	color:#000;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#menubarlinks a:hover {
+	background-color:#cc6300;
+}
+
+#menubarlinks li {
+	display:inline;
+}
+</style>
+
+</head>
+
+<body>
+<div class="bodydiv">
+	<div class="header">
+    <p style="margin-left:20px;font-size:24px;font-weight:bold;margin-bottom:0px;margin-top:0px">Andrew C. Loheac, Ph.D.</p>
+    <p style="margin-left:30px;margin-top:5px;margin-bottom:0px;font-size:14px">Analytical Consultant, SAS Institute<br/>
+    Computational Physicist, University of North Carolina at Chapel Hill</p>
+  </div>
+  <div id="menubar">
+    <div style="line-height:30px">
+    	<ul id="menubarlinks">
+        	<li><a href="./index.html">Home</a></li>
+            <li><a style="background-color:#cc6300" href="./research.html">Research</a></li>
+            <li><a href="./publications.html">Publications</a></li>
+            <li><a href="./scimitar.html">Scimitar</a></li>
+            <li><a href="./photography.html">Photography</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="bodymain">
+ 	<p class="heading">Research in Computational Physics</p>
+    <p class="mainbody">I have been involved in several research projects spanning different disciplines in physics throughout my undergraduate, graduate, and post-graduate career. The majority of my research interests lie in the application of computational techniques to the study of dynamical physical systems.</p>
+    <p class="heading">Graduate Research</p>
+    <p class="mainbody">I completed my Ph.D. in Department of Physics and Astronomy at the University of North Carolina at Chapel Hill. In spare time, am continuing to work with Prof. Joaquín Drut studying the thermodynamic properties of quantum systems using a variety of computational and numerical techniques.</p>
+    <p class="mainbody">We are currently:</p>
+    <p class="mainbody">
+    <ul>
+		  <li>looking at equations of state and thermodynamics of unpolarized and spin-polarized Fermi gases from weakly to strongly coupled regimes across vast temperature scales and dimensions,</li>
+      <li>developing new analytic and numerical techniques to study new systems that were previously inaccessible because of the "sign problem",</li>
+      <li>exploring the application of deep neural networks toward reducing the severity of the sign problem,</li>
+	    <li>continuing to develop <a href="./scimitar.html">Scimitar</a>, an application designed for the management and submission of large simulation jobs across large parameter spaces.</li>
+    </ul>
+    </p>
+    <p class="subheading">High-Order Perturbation Theory and Complex Langevin Techniques</p>
+    <p class="mainbody">The sign problem is a signal-to-noise issue which plauges a vast number of interesting physical systems, and prevents conventional Monte Carlo techniques from accessing the properties of such systems. As such, we have been developing a variety of analytic and numerical tools which avoid or reduce the sign problem in certain situations. Particularly, we developed a computational technique to analytically compute a high-order perturbative expansion on the lattice, and we also
+    adapted complex Langevin methods to work in the context of computing particular observables for atomic systems. These techniques eventually allowed us to study the polarized Fermi gas at unitarity in three spatial dimensions, an important system for ultracold atomic physics.</p>
+
+    <p class="subheading">Unpolarized and Polarized Interacting Fermi Gases</p>
+    <p class="mainbody">Much of my early work in the group focused on characterizing the thermodynamic properties of one-dimensional systems of unpolarized and polarized fermions at finite temperature. The unpolarized case, where the population of spin-up and spin-down fermions are equal, is free of a sign-problem and relatively straightforward to study once the relevant scales are well understood. The polarized case, where the system has a non-vanishing net spin magnetization, on the other hand introduces a sign problem which we have overcome by moving to the complex plane: either by introducing an imaginary chemical potential (which is analytically continued to the real axis), or applying complex Langevin (known as stochastic quantization in the context of real fields) with a regulator included in the action.</p>
+    
+    <p class="mainbody">You can find more about our group <a href="https://drut.web.unc.edu/">here</a>, as well as see a list of my own publications <a href="./publications.html">here</a>.</p>
+    <p class="heading">Undergraduate Research</p>
+    <table>
+    <tr>
+    <td><img src="./resources/diffractometer_33bm_sm.jpg" width="200px"/></td>
+    <td>
+    <p class="subheading">Investigation of Oxygen Interactions with the Au(001) Single Crystal Facet</p>
+    <p class="mainbody">I spent just over a year working with Dr. Michael Pierce in the X-Ray and Surface Science Laboratory at the <a href="http://rit.edu">Rochester Institute of Technology</a> studying the interactions of molecular oxygen and carbon monoxide with the top atomic monolayer of the Au(001) single crystal facet. At particular partial pressures and temperatures, oxygen exposure causes the surface layer to lift, or reconstruct, from a hexagonal phase to a (1x1) bulk truncated state in a reproducible and reversible fashion. We were able to map out a pressure-temperature phase diagram of the phase transition and measure associated activation energies using <i>in-situ</i> surface X-ray diffraction at the <a href="http://www.aps.anl.gov/">Advanced Photon Source</a> at <a href="http://www.anl.gov">Argonne National Laboratory</a>.</p>
+    </td>
+    </tr>
+    <tr>
+    <td><img src="./resources/partition_function.png" width="200px" /></td>
+    <td>
+    <p class="subheading">Thermodynamics of Strongly Coupled Matter</p>
+    <p class="mainbody">I spent the summer of 2013 at the <a href="http://www.unc.edu">University of North Carolina at Chapel Hill</a> as part of the <a href="http://physics.unc.edu/cap/">Computational Astronomy and Physics Research Experiences for Undergraduates</a> (NSF REU) program. I worked with Dr. Joaquin Drut (whom I am working with now as a graduate student) using quantum Monte Carlo techniques to calculate the equation of state of strongly coupled fermions using a high-order virial expansion.</p>
+    </td>
+    </tr>
+    <tr>
+    <td><img src="./resources/spherocylinder_diagram.png" width="200px" /></td>
+    <td>
+    <p class="subheading">Molecular Dynamics Simulations of Geometrically Cohesive Granular Materials with CUDA</p>
+    <p class="mainbody">My first experience at combining my strengths in algorithm design and physics arose during a research project with Prof. Scott Franklin at the Complex Systems and Granular Materials Laboratory at RIT. Beginning in my freshman year and continuing into the following summer, I developed a two-dimensional simulation in MATLAB to study the rheology of geometrically cohesive granular materials using a spherocylinder-based geometry. We "glued" spherocylinders together to study the dynamics of U-shaped particles, or staples, and flocking of active triangular particles. In order to study larger systems quickly, I spent a summer porting the simulation to a CUDA C++ implementation, a platform for running massively parallel scientific computations on Graphics Processing Units (GPUs). This improved simulation allowed us to study bulk properties of these materials by compressing and shearing large systems of spherostaples to see how they react to external agents.</p>
+    </td>
+    </tr>
+    </table>
+    <p class="heading">Funding</p>
+    <p class="mainbody">I was supported by a <a href="http://www.nsfgrfp.org/">Graduate Research Fellowship</a> from the National Science Foundation through my graduate career, which offers a stipend and full tuition coverage for three years. During my final year I was supported by a <a href="http://gradschool.unc.edu/funding/gradschool/dissertation.html">Dissertation Completion Fellowship</a>.</p>
+  </div>
+  <div align="center" class="footer">
+    <div style="float:left;width=50%;">
+      <p style="margin-top:0px;margin-bottom:0px;margin-right:0pt;margin-left:0px">&copy; 2021 Andrew Loheac</p>
+    </div>
+    <div style="float:right;width=50%;">
+		<p style="margin-top:0px;margin-bottom:0px;margin-right:0pt;margin-left:0px">This page was last updated on 6 July 2020.</p></div>
+    &nbsp;
+  </div>
+</div>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27079097-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</html>
